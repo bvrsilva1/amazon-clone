@@ -1,0 +1,61 @@
+.header {
+  background-color: #131921;
+  /*side by side and on the center of the navbar*/
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  /* nothing will be rendered on top of the navbar */
+  z-index: 100;
+}
+.headerLogo {
+  width: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 18px;
+}
+.headerSearch {
+  display: flex;
+  flex: 1;
+}
+.headerSearchInput {
+  height: 12px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+}
+.headerSearchIcon {
+  background-color: #cd9042;
+  padding: 5px;
+  /*!important doesnt apply css from material-ui*/
+  height: 22px !important;
+}
+.headerLinks {
+  display: flex;
+  justify-content: space-evenly;
+}
+.headerLink {
+  color: white;
+  text-decoration: none;
+}
+.headerOption {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.headerOptionTop {
+  font-size: 10px;
+}
+.headerOptionBottom {
+  font-size: 13px;
+  font-weight: 800;
+}
+.headerOptionBasket {
+  display: flex;
+  align-items: center;
+}
+.headerBasketCount {
+  margin-left: 10px;
+  margin-right: 10px;
+}
