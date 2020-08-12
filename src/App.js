@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
             <h1>login</h1>
           </Route>
           <Route path='/'>
-            <h1>home!!!!</h1>
+            <Navbar />
           </Route>
         </Switch>
       </div>
