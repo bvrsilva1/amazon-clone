@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import './Navbar.css'
+import { useStateValue } from '../state/StateProvider'
 
 const Navbar = () => {
+  //const [state, dispatch] = useStateValue() //have to use state.basket
+  const [{ basket }, dispatch] = useStateValue() //destruct and get the basket right away
   return (
     <nav className='header'>
       {/*Link doesnt refresh the page*/}
@@ -45,7 +48,9 @@ const Navbar = () => {
         <Link to='/checkout' className='headerLink'>
           <div className='headerOptionBasket'>
             <ShoppingBasketIcon />
-            <span className='headerOptionBottom headerBasketCount'>0</span>
+            <span className='headerOptionBottom headerBasketCount'>
+              {basket.length}
+            </span>
           </div>
         </Link>
       </div>
