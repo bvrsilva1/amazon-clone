@@ -4,10 +4,15 @@ import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import './Navbar.css'
 import { useStateValue } from '../state/StateProvider'
+import { auth } from '../firebase/firebase'
 
 const Navbar = () => {
-  //const [state, dispatch] = useStateValue() //have to use state.basket
-  const [{ basket }, dispatch] = useStateValue() //destruct and get the basket right away
+  const [{ basket, user }, dispatch] = useStateValue() //destruct and get the basket right away
+
+  const login = () => {
+    if (user) auth.signOut()
+  }
+
   return (
     <nav className='header'>
       {/*Link doesnt refresh the page*/}
@@ -24,10 +29,14 @@ const Navbar = () => {
       </div>
 
       <div className='headerLinks'>
-        <Link to='/' className='headerLink'>
-          <div className='headerOption'>
-            <span className='headerOptionTop'>Hello Bruno</span>
-            <span className='headerOptionBottom'>Sign In</span>
+        <Link to={!user && '/login'} className='headerLink'>
+          <div onClick={login} className='headerOption'>
+            <span className='headerOptionTop'>
+              {user ? `Hello ${user?.email}` : 'Hi!'}
+            </span>
+            <span className='headerOptionBottom'>
+              {user ? 'Sign Out' : 'Sign In'}
+            </span>
           </div>
         </Link>
 

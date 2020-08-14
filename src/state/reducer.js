@@ -1,13 +1,13 @@
 export const initialState = {
   basket: [
-    {
-      id: '68',
-      title: 'Eric Clapton The Autobiography',
-      image:
-        'https://images-na.ssl-images-amazon.com/images/I/51YZ20s6mdL._SX365_BO1,204,203,200_.jpg',
-      price: 21.64,
-      rating: 5,
-    },
+    // {
+    //   id: '68',
+    //   title: 'Eric Clapton The Autobiography',
+    //   image:
+    //     'https://images-na.ssl-images-amazon.com/images/I/51YZ20s6mdL._SX365_BO1,204,203,200_.jpg',
+    //   price: 21.64,
+    //   rating: 5,
+    // },
   ],
   user: null,
 }
@@ -17,6 +17,8 @@ export const getBasketTotal = (basket) =>
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case 'SET_USER':
+      return { ...state, user: action.user }
     case 'ADD_TO_BASKET':
       return {
         ...state,
