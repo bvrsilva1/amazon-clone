@@ -1,5 +1,7 @@
 ## Amazon clone - React
 
+### Live demo --> `https://clone-c76e9.web.ap`
+
 In the project directory, you can run:
 
 ### `yarn start`
