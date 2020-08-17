@@ -1,6 +1,6 @@
 ## Amazon clone - React
 
-### Live demo --> `https://clone-c76e9.web.ap`
+### Live demo --> `https://clone-c76e9.web.app`
 
 In the project directory, you can run:
 
